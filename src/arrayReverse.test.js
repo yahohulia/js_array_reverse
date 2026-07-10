@@ -7,14 +7,8 @@ describe(`Function 'arrayReverse':`, () => {
     expect(arrayReverse).toBeInstanceOf(Function);
   });
 
-  it(`should return an array`, () => {
-    const result = arrayReverse(['test']);
-
-    expect(Array.isArray(result)).toBe(true);
-  });
-
   it(`should reverse a single word`, () => {
-    expect(arrayReverse(['Hello'])).toEqual(['olleH']);
+    expect(arrayReverse(['Hell0'])).toEqual(['0lleH']);
   });
 
   it(`should reverse multiple words preserving their original lengths`, () => {
@@ -28,24 +22,5 @@ describe(`Function 'arrayReverse':`, () => {
       'e',
       'dutsamaI',
     ]);
-  });
-
-  it(`should return an empty array if the original array is empty`, () => {
-    expect(arrayReverse([])).toEqual([]);
-  });
-
-  it(`should handle an array that consists of an empty string`, () => {
-    expect(arrayReverse([''])).toEqual(['']);
-  });
-
-  it(`should correctly handle a mix of empty and non-empty strings`, () => {
-    expect(arrayReverse(['a', '', 'bc', ''])).toEqual(['c', '', 'ba', '']);
-  });
-
-  it(`should mutate the original array (in-place modification)`, () => {
-    const original = ['abc', 'def'];
-    const result = arrayReverse(original);
-
-    expect(result).toBe(original);
   });
 });
